@@ -12,19 +12,30 @@ function parseVec(v) {
 }
 
 export default function DotCrossProduct() {
-  const [rawA, setRawA] = useState({ x: '1', y: '0', z: '0' })
-  const [rawB, setRawB] = useState({ x: '0', y: '1', z: '0' })
+  const DEFAULT_A = { x: '1', y: '0', z: '0' }
+  const DEFAULT_B = { x: '0', y: '1', z: '0' }
+  const [rawA, setRawA] = useState(DEFAULT_A)
+  const [rawB, setRawB] = useState(DEFAULT_B)
+  const reset = () => { setRawA(DEFAULT_A); setRawB(DEFAULT_B) }
 
   const a = useMemo(() => parseVec(rawA), [rawA])
   const b = useMemo(() => parseVec(rawB), [rawB])
 
   return (
     <div className="max-w-5xl mx-auto px-4 space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-white">Módulo 4 — Producto Punto y Cruz</h1>
-        <p className="text-gray-400 text-sm mt-1">
-          Ingresa dos vectores A y B para calcular A·B y A×B con desarrollo paso a paso.
-        </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-white">Módulo 4 — Producto Punto y Cruz</h1>
+          <p className="text-gray-400 text-sm mt-1">
+            Ingresa dos vectores A y B para calcular A·B y A×B con desarrollo paso a paso.
+          </p>
+        </div>
+        <button
+          onClick={reset}
+          className="flex-shrink-0 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 rounded-lg border border-gray-600 transition-colors"
+        >
+          ↺ Reiniciar
+        </button>
       </div>
 
       <VectorPairInput

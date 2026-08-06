@@ -13,10 +13,12 @@ function parseForce(f) {
 }
 
 export default function ForceResultant() {
-  const [rawForces, setRawForces] = useState([
+  const DEFAULTS = [
     { mag: '100', theta: '45', phi: '0' },
     { mag: '80', theta: '90', phi: '90' },
-  ])
+  ]
+  const [rawForces, setRawForces] = useState(DEFAULTS)
+  const reset = () => setRawForces(DEFAULTS)
 
   const forces = useMemo(() => rawForces.map(parseForce), [rawForces])
   const resultant = useMemo(
@@ -26,11 +28,19 @@ export default function ForceResultant() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-white">Módulo 2 — Calculadora de Resultante</h1>
-        <p className="text-gray-400 text-sm mt-1">
-          θ: ángulo polar (desde eje Z), φ: ángulo azimutal (desde eje X en plano XY).
-        </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-white">Módulo 2 — Calculadora de Resultante</h1>
+          <p className="text-gray-400 text-sm mt-1">
+            θ: ángulo polar (desde eje Z), φ: ángulo azimutal (desde eje X en plano XY).
+          </p>
+        </div>
+        <button
+          onClick={reset}
+          className="flex-shrink-0 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 rounded-lg border border-gray-600 transition-colors"
+        >
+          ↺ Reiniciar
+        </button>
       </div>
 
       <ForceInputPanel forces={rawForces} onChange={setRawForces} />

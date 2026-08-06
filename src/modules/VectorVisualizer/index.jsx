@@ -14,11 +14,14 @@ function parseVec(v) {
 }
 
 export default function VectorVisualizer() {
-  const [rawVectors, setRawVectors] = useState([
+  const DEFAULTS = [
     { x: '2', y: '1', z: '0' },
     { x: '0', y: '2', z: '1' },
-  ])
+  ]
+  const [rawVectors, setRawVectors] = useState(DEFAULTS)
   const [coordMode, setCoordMode] = useState('cartesiano')
+
+  const reset = () => { setRawVectors(DEFAULTS); setCoordMode('cartesiano') }
 
   const vectors = useMemo(() => rawVectors.map(parseVec), [rawVectors])
   const resultant = useMemo(
@@ -28,11 +31,19 @@ export default function VectorVisualizer() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-white">Módulo 1 — Visualizador de Vectores 3D</h1>
-        <p className="text-gray-400 text-sm mt-1">
-          Ingresa hasta 4 vectores y visualízalos en el espacio tridimensional.
-        </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-white">Módulo 1 — Visualizador de Vectores 3D</h1>
+          <p className="text-gray-400 text-sm mt-1">
+            Ingresa hasta 4 vectores y visualízalos en el espacio tridimensional.
+          </p>
+        </div>
+        <button
+          onClick={reset}
+          className="flex-shrink-0 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 rounded-lg border border-gray-600 transition-colors"
+        >
+          ↺ Reiniciar
+        </button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
