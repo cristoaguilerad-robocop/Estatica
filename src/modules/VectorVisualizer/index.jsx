@@ -30,11 +30,11 @@ export default function VectorVisualizer() {
   )
 
   return (
-    <div className="max-w-6xl mx-auto px-4 space-y-6">
+    <div className="max-w-6xl mx-auto px-3 sm:px-4 space-y-4 sm:space-y-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Módulo 1 — Visualizador de Vectores 3D</h1>
-          <p className="text-gray-400 text-sm mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-white">Módulo 1 — Visualizador de Vectores 3D</h1>
+          <p className="text-gray-400 text-xs sm:text-sm mt-1">
             Ingresa hasta 4 vectores y visualízalos en el espacio tridimensional.
           </p>
         </div>
@@ -46,8 +46,8 @@ export default function VectorVisualizer() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="space-y-3 md:space-y-4">
           <VectorInputPanel vectors={rawVectors} onChange={setRawVectors} />
           <div>
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-2 font-semibold">
@@ -56,7 +56,7 @@ export default function VectorVisualizer() {
             <CoordSelector mode={coordMode} onChange={setCoordMode} />
           </div>
         </div>
-        <div className="lg:col-span-2 space-y-4">
+        <div className="md:col-span-1 lg:col-span-2 space-y-4">
           <VectorScene3D vectors={vectors} resultant={resultant} />
           <VectorResultsTable
             vectors={vectors}

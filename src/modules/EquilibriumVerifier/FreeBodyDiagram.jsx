@@ -48,7 +48,7 @@ export default function FreeBodyDiagram({ forces, moments }) {
       <p className="text-xs text-gray-400 uppercase tracking-wider mb-3 font-semibold">
         Diagrama de Cuerpo Libre (simplificado)
       </p>
-      <svg width="320" height="320" viewBox="0 0 320 320" className="mx-auto">
+      <svg width="100%" viewBox="0 0 320 320" className="mx-auto max-w-sm">
         <defs>
           {[...forceColors, ...momentColors].map((c) => (
             <marker

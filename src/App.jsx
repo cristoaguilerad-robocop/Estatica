@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <NavBar />
-      <main className="py-6">
+      <main className="py-4 sm:py-6">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vectores" element={<VectorVisualizer />} />

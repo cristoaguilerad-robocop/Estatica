@@ -22,11 +22,11 @@ export default function DotCrossProduct() {
   const b = useMemo(() => parseVec(rawB), [rawB])
 
   return (
-    <div className="max-w-5xl mx-auto px-4 space-y-6">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-4 sm:space-y-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Módulo 4 — Producto Punto y Cruz</h1>
-          <p className="text-gray-400 text-sm mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-white">Módulo 4 — Producto Punto y Cruz</h1>
+          <p className="text-gray-400 text-xs sm:text-sm mt-1">
             Ingresa dos vectores A y B para calcular A·B y A×B con desarrollo paso a paso.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function DotCrossProduct() {
         onChangeB={setRawB}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         <StepByStep a={a} b={b} />
         <ProductScene3D a={a} b={b} />
       </div>

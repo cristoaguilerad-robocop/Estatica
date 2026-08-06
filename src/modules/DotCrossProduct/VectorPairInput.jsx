@@ -8,19 +8,17 @@ function VecInput({ label, color, value, onChange }) {
 
   return (
     <div className="p-3 bg-gray-700 rounded-lg space-y-2">
-      <p className="font-bold font-mono text-sm" style={{ color }}>
-        Vector {label}
-      </p>
-      <div className="flex flex-wrap gap-3">
+      <p className="text-xs font-bold" style={{ color }}>Vector {label}</p>
+      <div className="grid grid-cols-3 gap-2">
         {['x', 'y', 'z'].map((axis) => (
-          <div key={axis} className="flex items-center gap-1">
-            <label className="text-xs text-gray-400">{label}{axis}:</label>
+          <div key={axis} className="flex flex-col gap-1">
+            <label className="text-xs text-gray-400 text-center">{label}{axis}</label>
             <input
               type="text"
               inputMode="decimal"
               value={value[axis]}
               onChange={handleField(axis)}
-              className="w-20 bg-gray-800 border border-gray-600 rounded px-2 py-1 text-sm text-white focus:outline-none"
+              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1.5 text-sm text-white text-center focus:outline-none"
               style={{ outlineColor: color }}
             />
           </div>
@@ -32,7 +30,7 @@ function VecInput({ label, color, value, onChange }) {
 
 export default function VectorPairInput({ vecA, vecB, onChangeA, onChangeB }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
       <VecInput label="A" color="#ef4444" value={vecA} onChange={onChangeA} />
       <VecInput label="B" color="#3b82f6" value={vecB} onChange={onChangeB} />
     </div>

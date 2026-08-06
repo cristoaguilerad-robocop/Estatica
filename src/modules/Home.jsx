@@ -2,15 +2,15 @@ import ModuleCard from '../components/ModuleCard'
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-white mb-2">
+    <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
         Estática — ING 2204
       </h1>
-      <p className="text-gray-400 mb-10">
+      <p className="text-gray-400 text-sm sm:text-base mb-8 sm:mb-10">
         Universidad de Los Andes · Herramientas interactivas para estudiar
         equilibrio, fuerzas y vectores.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <ModuleCard
           to="/vectores"
           icon="🧭"

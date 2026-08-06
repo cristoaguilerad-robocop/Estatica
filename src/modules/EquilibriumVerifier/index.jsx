@@ -37,11 +37,11 @@ export default function EquilibriumVerifier() {
   )
 
   return (
-    <div className="max-w-5xl mx-auto px-4 space-y-6">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-4 sm:space-y-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Módulo 3 — Verificador de Equilibrio</h1>
-          <p className="text-gray-400 text-sm mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-white">Módulo 3 — Verificador de Equilibrio</h1>
+          <p className="text-gray-400 text-xs sm:text-sm mt-1">
             Ingresa fuerzas y momentos aplicados al cuerpo. Se verifica ΣF = 0 y ΣM = 0.
           </p>
         </div>

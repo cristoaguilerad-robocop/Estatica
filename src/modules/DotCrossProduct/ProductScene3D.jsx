@@ -43,7 +43,7 @@ export default function ProductScene3D({ a, b }) {
   const c = useMemo(() => cross(a, b), [a, b])
 
   return (
-    <div className="w-full h-80 rounded-xl overflow-hidden border border-gray-700">
+    <div className="w-full h-60 sm:h-72 lg:h-80 rounded-xl overflow-hidden border border-gray-700">
       <Canvas camera={{ position: [5, 4, 5], fov: 45 }} gl={{ antialias: true }}>
         <color attach="background" args={['#111827']} />
         <ambientLight intensity={0.5} />
