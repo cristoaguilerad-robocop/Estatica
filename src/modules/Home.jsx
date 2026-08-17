@@ -2,11 +2,11 @@ import ModuleCard from '../components/ModuleCard'
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
-      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+    <div className="max-w-5xl mx-auto px-4 py-4 sm:py-6">
+      <h1 className="text-xl sm:text-2xl font-bold text-white mb-1">
         Estática — ING 2204
       </h1>
-      <p className="text-gray-400 text-sm sm:text-base mb-8 sm:mb-10">
+      <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6">
         Universidad de Los Andes · Herramientas interactivas para estudiar
         equilibrio, fuerzas y vectores.
       </p>

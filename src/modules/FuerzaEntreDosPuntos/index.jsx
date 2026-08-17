@@ -16,7 +16,7 @@ function PointInput({ label, color, value, onChange }) {
     if (v === '' || v === '-' || /^-?\d*\.?\d*$/.test(v)) onChange({ ...value, [axis]: v })
   }
   return (
-    <div className="p-3 bg-gray-700 rounded-lg space-y-2">
+    <div className="p-2 bg-gray-700 rounded-lg space-y-1.5">
       <p className="text-xs font-bold" style={{ color }}>Punto {label}</p>
       <div className="grid grid-cols-3 gap-2">
         {['x', 'y', 'z'].map((ax) => (
@@ -24,7 +24,7 @@ function PointInput({ label, color, value, onChange }) {
             <label className="text-xs text-gray-400 text-center">{ax}</label>
             <input
               type="text" inputMode="decimal" value={value[ax]} onChange={handle(ax)}
-              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1.5 text-sm text-white text-center focus:outline-none"
+              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-xs text-white text-center focus:outline-none"
               style={{ outlineColor: color }}
             />
           </div>
@@ -99,7 +99,7 @@ export default function FuerzaEntreDosPuntos() {
   const scale = Math.max(magAB, 1)
 
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-4 sm:space-y-6">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-3 sm:space-y-4">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-bold text-white">Módulo 5 — Fuerza entre Dos Puntos</h1>
@@ -116,7 +116,7 @@ export default function FuerzaEntreDosPuntos() {
         <div className="space-y-3">
           <PointInput label="A (origen)" color="#f97316" value={rawA} onChange={setRawA} />
           <PointInput label="B (destino)" color="#a78bfa" value={rawB} onChange={setRawB} />
-          <div className="p-3 bg-gray-700 rounded-lg space-y-2">
+          <div className="p-2 bg-gray-700 rounded-lg space-y-1.5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Magnitud de la fuerza</p>
             <div className="flex items-center gap-2">
               <input
@@ -166,7 +166,7 @@ export default function FuerzaEntreDosPuntos() {
       </div>
 
       {/* Vista 3D */}
-      <div className="w-full h-64 sm:h-80 rounded-xl overflow-hidden border border-gray-700">
+      <div className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
         <Canvas camera={{ position: [3,3,3], fov: 45 }} gl={{ antialias: true }}>
           <color attach="background" args={['#111827']} />
           <ambientLight intensity={0.6} />

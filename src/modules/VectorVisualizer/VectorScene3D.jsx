@@ -63,7 +63,7 @@ function Axes() {
 
 export default function VectorScene3D({ vectors, resultant }) {
   return (
-    <div className="w-full h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden border border-gray-700">
+    <div className="w-full h-52 sm:h-64 lg:h-72 rounded-xl overflow-hidden border border-gray-700">
       <Canvas camera={{ position: [5, 4, 5], fov: 45 }} gl={{ antialias: true }}>
         <color attach="background" args={['#111827']} />
         <ambientLight intensity={0.5} />

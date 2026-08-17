@@ -11,7 +11,7 @@ function VectorRow({ index, vec, onChange, onRemove }) {
   }
 
   return (
-    <div className="p-3 bg-gray-700 rounded-lg space-y-2">
+    <div className="p-2 bg-gray-700 rounded-lg space-y-1.5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
@@ -35,7 +35,7 @@ function VectorRow({ index, vec, onChange, onRemove }) {
               inputMode="decimal"
               value={vec[axis]}
               onChange={handleField(axis)}
-              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1.5 text-sm text-white text-center focus:outline-none focus:border-cyan-500"
+              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-xs text-white text-center focus:outline-none focus:border-cyan-500"
             />
           </div>
         ))}

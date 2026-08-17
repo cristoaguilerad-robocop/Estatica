@@ -16,14 +16,14 @@ function PointInput({ label, color, value, onChange }) {
     if (v===''||v==='-'||/^-?\d*\.?\d*$/.test(v)) onChange({ ...value, [ax]: v })
   }
   return (
-    <div className="p-3 bg-gray-700 rounded-lg space-y-2">
+    <div className="p-2 bg-gray-700 rounded-lg space-y-1.5">
       <p className="text-xs font-bold" style={{ color }}>Punto {label}</p>
       <div className="grid grid-cols-3 gap-2">
         {['x','y','z'].map(ax => (
           <div key={ax} className="flex flex-col gap-1">
             <label className="text-xs text-gray-400 text-center">{ax}</label>
             <input type="text" inputMode="decimal" value={value[ax]} onChange={handle(ax)}
-              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1.5 text-sm text-white text-center focus:outline-none"
+              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-xs text-white text-center focus:outline-none"
               style={{ outlineColor: color }}
             />
           </div>
@@ -115,7 +115,7 @@ export default function NormalPlano() {
   const centroid = { x:(A.x+B.x+C.x)/3, y:(A.y+B.y+C.y)/3, z:(A.z+B.z+C.z)/3 }
 
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-4 sm:space-y-6">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-3 sm:space-y-4">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-bold text-white">Módulo 6 — Vector Normal a un Plano</h1>
@@ -165,7 +165,7 @@ export default function NormalPlano() {
           </FormulaBox>
         </div>
 
-        <div className="w-full h-72 sm:h-80 rounded-xl overflow-hidden border border-gray-700">
+        <div className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
           <Canvas camera={{ position: [2.5,2.5,2.5], fov: 45 }} gl={{ antialias: true }}>
             <color attach="background" args={['#111827']} />
             <ambientLight intensity={0.6} />

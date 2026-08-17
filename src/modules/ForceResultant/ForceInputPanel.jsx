@@ -32,7 +32,7 @@ function ForceRow({ index, force, onChange, onRemove }) {
               inputMode="decimal"
               value={force[key]}
               onChange={handleField(key)}
-              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1.5 text-sm text-white text-center focus:outline-none focus:border-yellow-500"
+              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-xs text-white text-center focus:outline-none focus:border-yellow-500"
             />
           </div>
         ))}

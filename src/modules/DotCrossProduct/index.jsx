@@ -22,7 +22,7 @@ export default function DotCrossProduct() {
   const b = useMemo(() => parseVec(rawB), [rawB])
 
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-4 sm:space-y-6">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 space-y-3 sm:space-y-4">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-bold text-white">Módulo 4 — Producto Punto y Cruz</h1>
@@ -45,7 +45,7 @@ export default function DotCrossProduct() {
         onChangeB={setRawB}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
         <StepByStep a={a} b={b} />
         <ProductScene3D a={a} b={b} />
       </div>

@@ -18,7 +18,7 @@ function VecInput({ label, color, value, onChange }) {
               inputMode="decimal"
               value={value[axis]}
               onChange={handleField(axis)}
-              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1.5 text-sm text-white text-center focus:outline-none"
+              className="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-xs text-white text-center focus:outline-none"
               style={{ outlineColor: color }}
             />
           </div>
