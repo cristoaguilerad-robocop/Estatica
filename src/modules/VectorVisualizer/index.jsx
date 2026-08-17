@@ -48,8 +48,10 @@ export default function VectorVisualizer() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <div className="space-y-3 md:space-y-4">
-          <VectorInputPanel vectors={rawVectors} onChange={setRawVectors} />
-          <div>
+          <div data-tour-id="tour-vec-inputs">
+            <VectorInputPanel vectors={rawVectors} onChange={setRawVectors} />
+          </div>
+          <div data-tour-id="tour-vec-coord">
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-2 font-semibold">
               Sistema de coordenadas
             </p>
@@ -57,12 +59,12 @@ export default function VectorVisualizer() {
           </div>
         </div>
         <div className="md:col-span-1 lg:col-span-2 space-y-4">
-          <VectorScene3D vectors={vectors} resultant={resultant} />
-          <VectorResultsTable
-            vectors={vectors}
-            resultant={resultant}
-            coordMode={coordMode}
-          />
+          <div data-tour-id="tour-vec-canvas">
+            <VectorScene3D vectors={vectors} resultant={resultant} />
+          </div>
+          <div data-tour-id="tour-vec-table">
+            <VectorResultsTable vectors={vectors} resultant={resultant} coordMode={coordMode} />
+          </div>
         </div>
       </div>
     </div>

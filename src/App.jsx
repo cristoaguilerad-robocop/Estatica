@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
+import TourGuide from './components/TourGuide'
+import { TourProvider } from './context/TourContext'
 import Home from './modules/Home'
 import VectorVisualizer from './modules/VectorVisualizer'
 import ForceResultant from './modules/ForceResultant'
@@ -11,20 +13,23 @@ import MomentoFuerza from './modules/MomentoFuerza'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      <NavBar />
-      <main className="py-3 sm:py-5">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/vectores" element={<VectorVisualizer />} />
-          <Route path="/fuerzas" element={<ForceResultant />} />
-          <Route path="/equilibrio" element={<EquilibriumVerifier />} />
-          <Route path="/productos" element={<DotCrossProduct />} />
-          <Route path="/fuerza-linea" element={<FuerzaEntreDosPuntos />} />
-          <Route path="/normal-plano" element={<NormalPlano />} />
-          <Route path="/momento" element={<MomentoFuerza />} />
-        </Routes>
-      </main>
-    </div>
+    <TourProvider>
+      <div className="min-h-screen bg-gray-900 text-gray-100">
+        <NavBar />
+        <main className="py-3 sm:py-5">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/vectores" element={<VectorVisualizer />} />
+            <Route path="/fuerzas" element={<ForceResultant />} />
+            <Route path="/equilibrio" element={<EquilibriumVerifier />} />
+            <Route path="/productos" element={<DotCrossProduct />} />
+            <Route path="/fuerza-linea" element={<FuerzaEntreDosPuntos />} />
+            <Route path="/normal-plano" element={<NormalPlano />} />
+            <Route path="/momento" element={<MomentoFuerza />} />
+          </Routes>
+        </main>
+        <TourGuide />
+      </div>
+    </TourProvider>
   )
 }

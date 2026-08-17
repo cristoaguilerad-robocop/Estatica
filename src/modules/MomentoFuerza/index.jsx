@@ -114,15 +114,14 @@ export default function MomentoFuerza() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div data-tour-id="tour-mo-inputs" className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <VecInput label="Punto O" subtitle="(punto de referencia)" color="#94a3b8" value={rawO} onChange={setRawO} />
         <VecInput label="Punto A" subtitle="(aplicación de la fuerza)" color="#fb923c" value={rawA} onChange={setRawA} />
         <VecInput label="Fuerza F" subtitle="(componentes en N)" color="#f43f5e" value={rawF} onChange={setRawF} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Paso a paso */}
-        <div className="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-4">
+        <div data-tour-id="tour-mo-steps" className="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-4">
           <h3 className="font-semibold text-white text-sm">Desarrollo paso a paso</h3>
 
           <div className="font-mono text-sm bg-gray-700 rounded p-3 space-y-1">
@@ -163,8 +162,7 @@ export default function MomentoFuerza() {
           </FormulaBox>
         </div>
 
-        {/* Vista 3D */}
-        <div className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
+        <div data-tour-id="tour-mo-canvas" className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
           <Canvas camera={{ position: [3,3,3], fov: 45 }} gl={{ antialias: true }}>
             <color attach="background" args={['#111827']} />
             <ambientLight intensity={0.6} />

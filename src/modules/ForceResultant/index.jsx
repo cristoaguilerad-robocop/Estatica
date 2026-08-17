@@ -43,9 +43,15 @@ export default function ForceResultant() {
         </button>
       </div>
 
-      <ForceInputPanel forces={rawForces} onChange={setRawForces} />
-      <EquilibriumBadge resultant={resultant} />
-      <ForceTable forces={forces} resultant={resultant} />
+      <div data-tour-id="tour-fuerza-inputs">
+        <ForceInputPanel forces={rawForces} onChange={setRawForces} />
+      </div>
+      <div data-tour-id="tour-fuerza-badge">
+        <EquilibriumBadge resultant={resultant} />
+      </div>
+      <div data-tour-id="tour-fuerza-tabla">
+        <ForceTable forces={forces} resultant={resultant} />
+      </div>
     </div>
   )
 }

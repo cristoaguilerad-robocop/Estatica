@@ -128,14 +128,14 @@ export default function NormalPlano() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div data-tour-id="tour-np-inputs" className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <PointInput label="A" color="#f87171" value={rawA} onChange={setRawA} />
         <PointInput label="B" color="#60a5fa" value={rawB} onChange={setRawB} />
         <PointInput label="C" color="#a78bfa" value={rawC} onChange={setRawC} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-4">
+        <div data-tour-id="tour-np-steps" className="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-4">
           <h3 className="font-semibold text-white text-sm">Desarrollo paso a paso</h3>
 
           <div className="font-mono text-sm bg-gray-700 rounded p-3 space-y-1">
@@ -165,7 +165,7 @@ export default function NormalPlano() {
           </FormulaBox>
         </div>
 
-        <div className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
+        <div data-tour-id="tour-np-canvas" className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
           <Canvas camera={{ position: [2.5,2.5,2.5], fov: 45 }} gl={{ antialias: true }}>
             <color attach="background" args={['#111827']} />
             <ambientLight intensity={0.6} />

@@ -38,16 +38,17 @@ export default function DotCrossProduct() {
         </button>
       </div>
 
-      <VectorPairInput
-        vecA={rawA}
-        vecB={rawB}
-        onChangeA={setRawA}
-        onChangeB={setRawB}
-      />
+      <div data-tour-id="tour-dc-inputs">
+        <VectorPairInput vecA={rawA} vecB={rawB} onChangeA={setRawA} onChangeB={setRawB} />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
-        <StepByStep a={a} b={b} />
-        <ProductScene3D a={a} b={b} />
+        <div data-tour-id="tour-dc-steps">
+          <StepByStep a={a} b={b} />
+        </div>
+        <div data-tour-id="tour-dc-canvas">
+          <ProductScene3D a={a} b={b} />
+        </div>
       </div>
     </div>
   )

@@ -1,15 +1,30 @@
+import { useState } from 'react'
 import ModuleCard from '../components/ModuleCard'
+import TourModal from '../components/TourModal'
 
 export default function Home() {
+  const [showTour, setShowTour] = useState(false)
   return (
     <div className="max-w-5xl mx-auto px-4 py-4 sm:py-6">
-      <h1 className="text-xl sm:text-2xl font-bold text-white mb-1">
-        Estática — ING 2204
-      </h1>
-      <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6">
-        Universidad de Los Andes · Herramientas interactivas para estudiar
-        equilibrio, fuerzas y vectores.
-      </p>
+      <div className="flex items-start justify-between gap-4 mb-4 sm:mb-6">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-white mb-1">
+            Estática — ING 2204
+          </h1>
+          <p className="text-gray-400 text-xs sm:text-sm">
+            Universidad de Los Andes · Herramientas interactivas para estudiar
+            equilibrio, fuerzas y vectores.
+          </p>
+        </div>
+        <button
+          onClick={() => setShowTour(true)}
+          className="flex-shrink-0 flex items-center gap-2 bg-cyan-700 hover:bg-cyan-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-cyan-900/40 transition-all border border-cyan-500"
+        >
+          <span className="text-base">🎓</span>
+          <span className="hidden sm:inline">Tour</span>
+        </button>
+      </div>
+      {showTour && <TourModal onClose={() => setShowTour(false)} />}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <ModuleCard
           to="/vectores"

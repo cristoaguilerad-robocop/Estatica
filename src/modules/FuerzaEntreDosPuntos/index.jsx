@@ -114,9 +114,13 @@ export default function FuerzaEntreDosPuntos() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-3">
-          <PointInput label="A (origen)" color="#f97316" value={rawA} onChange={setRawA} />
-          <PointInput label="B (destino)" color="#a78bfa" value={rawB} onChange={setRawB} />
-          <div className="p-2 bg-gray-700 rounded-lg space-y-1.5">
+          <div data-tour-id="tour-fl-puntos">
+            <PointInput label="A (origen)" color="#f97316" value={rawA} onChange={setRawA} />
+            <div className="mt-3">
+              <PointInput label="B (destino)" color="#a78bfa" value={rawB} onChange={setRawB} />
+            </div>
+          </div>
+          <div data-tour-id="tour-fl-mag" className="p-2 bg-gray-700 rounded-lg space-y-1.5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Magnitud de la fuerza</p>
             <div className="flex items-center gap-2">
               <input
@@ -130,8 +134,7 @@ export default function FuerzaEntreDosPuntos() {
         </div>
 
         <div className="space-y-3">
-          {/* Resultados */}
-          <div className="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-3">
+          <div data-tour-id="tour-fl-results" className="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-3">
             <h3 className="font-semibold text-white text-sm">Resultados</h3>
 
             <div className="space-y-2">
@@ -165,8 +168,7 @@ export default function FuerzaEntreDosPuntos() {
         </div>
       </div>
 
-      {/* Vista 3D */}
-      <div className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
+      <div data-tour-id="tour-fl-canvas" className="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-gray-700">
         <Canvas camera={{ position: [3,3,3], fov: 45 }} gl={{ antialias: true }}>
           <color attach="background" args={['#111827']} />
           <ambientLight intensity={0.6} />

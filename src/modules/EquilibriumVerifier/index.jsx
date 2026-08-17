@@ -53,16 +53,22 @@ export default function EquilibriumVerifier() {
         </button>
       </div>
 
-      <ForceMomentInput
-        forces={rawForces}
-        moments={rawMoments}
-        onForcesChange={setRawForces}
-        onMomentsChange={setRawMoments}
-      />
+      <div data-tour-id="tour-eq-inputs">
+        <ForceMomentInput
+          forces={rawForces}
+          moments={rawMoments}
+          onForcesChange={setRawForces}
+          onMomentsChange={setRawMoments}
+        />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <FreeBodyDiagram forces={forces} moments={moments} />
-        <EquilibriumReport sumF={sumF} sumM={sumM} />
+        <div data-tour-id="tour-eq-dcl">
+          <FreeBodyDiagram forces={forces} moments={moments} />
+        </div>
+        <div data-tour-id="tour-eq-report">
+          <EquilibriumReport sumF={sumF} sumM={sumM} />
+        </div>
       </div>
     </div>
   )
