@@ -6,6 +6,9 @@ const links = [
   { to: '/fuerzas', label: 'Resultante' },
   { to: '/equilibrio', label: 'Equilibrio' },
   { to: '/productos', label: 'Dot & Cross' },
+  { to: '/fuerza-linea', label: 'Fuerza en Línea' },
+  { to: '/normal-plano', label: 'Normal al Plano' },
+  { to: '/momento', label: 'Momento de Fuerza' },
 ]
 
 export default function NavBar() {

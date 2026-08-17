@@ -10,7 +10,7 @@ export default function Home() {
         Universidad de Los Andes · Herramientas interactivas para estudiar
         equilibrio, fuerzas y vectores.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <ModuleCard
           to="/vectores"
           icon="🧭"
@@ -38,6 +38,27 @@ export default function Home() {
           title="Módulo 4 — Producto punto y cruz"
           description="Calcula A·B y A×B con desarrollo paso a paso. Muestra el ángulo entre vectores y grafica el producto cruz en 3D."
           color="purple"
+        />
+        <ModuleCard
+          to="/fuerza-linea"
+          icon="🎯"
+          title="Módulo 5 — Fuerza entre dos puntos"
+          description="Dado un segmento AB y una magnitud, calcula el vector unitario û_AB y la fuerza F = |F|·û_AB a lo largo de la línea."
+          color="orange"
+        />
+        <ModuleCard
+          to="/normal-plano"
+          icon="📐"
+          title="Módulo 6 — Vector normal a un plano"
+          description="Dados tres puntos A, B, C en el espacio, calcula el vector normal al plano usando n = AB × BC y su vector unitario n̂."
+          color="red"
+        />
+        <ModuleCard
+          to="/momento"
+          icon="🔄"
+          title="Módulo 7 — Momento de una fuerza"
+          description="Calcula el momento M = r × F respecto a un punto O. Muestra el desarrollo con determinante y grafica el momento en 3D."
+          color="green"
         />
       </div>
     </div>
